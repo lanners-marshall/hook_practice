@@ -5,11 +5,12 @@ import Hook from './components/Hook'
 import DataLoader from './components/DataLoader'
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
         <Hook />
-        <DataLoader/>
+        <DataLoader />
       </div>
     );
   }

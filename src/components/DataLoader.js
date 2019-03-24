@@ -1,18 +1,13 @@
-import React, { useState, useEffect } from "react";
-export default function useDataLoader() {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    fetch("http://api.icndb.com/jokes/random")
-      .then(response => response.json())
-      .then(data => {
-        setData(data.value.joke)
-      });
-  }, []);
+import React from "react";
+import useFetch from "./useFetch";
+export default function DataLoader(props) {
+  const data = useFetch("http://api.icndb.com/jokes/random");
+
   return (
     <div>
-      <div>
+      <p>
         {data}
-      </div>
+      </p>
     </div>
   );
 }
